@@ -1,5 +1,5 @@
 // Create businesses and categories
-CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/business.json')
+CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_business.json')
 YIELD value
 WITH value LIMIT 1000
 MERGE (b:Business {id:value.business_id})
@@ -9,7 +9,7 @@ UNWIND categories as category
 MERGE (c:Category{name:category})
 MERGE (b)-[:IN_CATEGORY]->(c);
 
-CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/user.json')
+CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_user.json')
 YIELD value
 WITH value LIMIT 1000
 MERGE (u:User {id:value.user_id})
@@ -20,7 +20,7 @@ MERGE (u1:User {id:friend})
 MERGE (u)-[:FRIENDS]-(u1);
 
 
-CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/review.json')
+CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_review.json')
 YIELD value
 WITH value LIMIT 50000
 MERGE (b:Business {id:value.business_id})
@@ -29,7 +29,3 @@ MERGE (r:Review {id:value.review_id})
 MERGE (u)-[:WROTE]->(r)
 MERGE (r)-[:REVIEWS]->(b)
 SET r += apoc.map.clean(value, ['business_id','user_id','review_id'], []);
-
-
-
-

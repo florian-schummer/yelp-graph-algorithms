@@ -9,7 +9,7 @@ def write_header(file_name, columns):
         writer.writerow(columns)
 
 if not os.path.isfile("data/business_header.csv"):
-    with open("dataset/business.json") as business_json, \
+    with open("dataset/yelp_academic_dataset_business.json") as business_json, \
             open("data/business.csv", 'w') as business_csv:
 
         write_header("data/business_header.csv", ['id:ID(Business)', 'name', 'address', 'city', 'state'])
@@ -26,7 +26,7 @@ if not os.path.isfile("data/business_header.csv"):
                 raise e
 
 if not os.path.isfile("data/city_header.csv"):
-    with open("dataset/business.json") as business_json, \
+    with open("dataset/yelp_academic_dataset_business.json") as business_json, \
             open("data/city.csv", "w") as city_csv, \
             open("data/business_IN_CITY_city.csv", "w") as business_city_csv:
 
@@ -93,7 +93,7 @@ if not os.path.isfile("data/area_header.csv"):
             area_country_writer.writerow([area, country])
 
 if not os.path.isfile("data/category_header.csv"):
-    with open("dataset/business.json") as business_json, \
+    with open("dataset/yelp_academic_dataset_business.json") as business_json, \
             open("data/category.csv", 'w') as categories_csv, \
             open("data/business_IN_CATEGORY_category.csv", 'w') as business_category_csv:
 
@@ -118,7 +118,7 @@ if not os.path.isfile("data/category_header.csv"):
                 raise e
 
 if not os.path.isfile("data/user_header.csv"):
-    with open("dataset/user.json") as user_json, \
+    with open("dataset/yelp_academic_dataset_user.json") as user_json, \
             open("data/user.csv", 'w') as user_csv, \
             open("data/user_FRIENDS_user.csv", 'w') as user_user_csv:
 
@@ -135,7 +135,7 @@ if not os.path.isfile("data/user_header.csv"):
                 user_user_writer.writerow([item["user_id"], friend_id])
 
 if not os.path.isfile("data/review_header.csv"):
-    with open("dataset/review.json") as review_json, \
+    with open("dataset/yelp_academic_dataset_review.json") as review_json, \
             open("data/review.csv", 'w') as review_csv, \
             open("data/user_WROTE_review.csv", 'w') as user_review_csv, \
             open("data/review_REVIEWS_business.csv", 'w') as review_business_csv:

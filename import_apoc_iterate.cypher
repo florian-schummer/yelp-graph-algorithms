@@ -1,5 +1,5 @@
 CALL apoc.periodic.iterate(
-  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/business.json')
+  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_business.json')
    YIELD value
    WITH value LIMIT 1000
    RETURN value",
@@ -11,7 +11,7 @@ CALL apoc.periodic.iterate(
   {iterateList: true, batchSize:500, parallel: true});
 
 CALL apoc.periodic.iterate(
-  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/business.json')
+  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_business.json')
    YIELD value
    WITH value LIMIT 1000
    RETURN value",
@@ -23,7 +23,7 @@ CALL apoc.periodic.iterate(
   {iterateList: true, batchSize:500});
 
 CALL apoc.periodic.iterate(
-  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/user.json')
+  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_user.json')
    YIELD value
    WITH value LIMIT 1000
    RETURN value",
@@ -32,7 +32,7 @@ CALL apoc.periodic.iterate(
   {iterateList: true, batchSize:500, parallel: true});
 
 CALL apoc.periodic.iterate(
-  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/user.json')
+  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_user.json')
    YIELD value
    WITH value LIMIT 1000
    RETURN value",
@@ -44,7 +44,7 @@ CALL apoc.periodic.iterate(
   {iterateList: true, batchSize:500});
 
 CALL apoc.periodic.iterate(
-  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/review.json')
+  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_review.json')
    YIELD value
    WITH value LIMIT 50000
    RETURN value",
@@ -54,7 +54,7 @@ CALL apoc.periodic.iterate(
   {iterateList: true, batchSize:500, parallel: true});
 
 CALL apoc.periodic.iterate(
-  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/review.json')
+  "CALL apoc.load.json('file:///Users/markneedham/projects/yelp-graph-algorithms/dataset/yelp_academic_dataset_review.json')
    YIELD value
    WITH value LIMIT 1000
    RETURN value",

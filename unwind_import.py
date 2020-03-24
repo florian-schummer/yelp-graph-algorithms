@@ -4,7 +4,7 @@ from neo4j.v1 import GraphDatabase
 
 driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "neo"))
 
-with open("dataset/business.json", 'r') as file:
+with open("dataset/yelp_academic_dataset_business.json", 'r') as file:
     with driver.session() as session:
         count = 0
         items = []

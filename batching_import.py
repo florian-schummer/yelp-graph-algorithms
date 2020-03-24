@@ -3,7 +3,7 @@ import json
 
 driver = GraphDatabase.driver("bolt://localhost", auth=("neo4j", "neo"))
 
-with open("dataset/business.json", 'r') as file:
+with open("dataset/yelp_academic_dataset_business.json", 'r') as file:
     with driver.session() as session:
         count = 0
         tx = session.begin_transaction()
